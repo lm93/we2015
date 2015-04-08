@@ -2,7 +2,7 @@
     get_header();
     global $stylesheet_dir;
 ?>
-				<div class="container" style="background-image: url('./images/bg3.png');background-size: 100%;background-repeat: no-repeat;background-color: #040205; " role="main">
+				<div class="container" style="background-image: url('<?php echoPicture($stylesheet_dir,'./images/bg3.png');?> ');background-size: 100%;background-repeat: no-repeat;background-color: #040205; " role="main">
 
 					<ul class="list">
 												<li class="list__item">
