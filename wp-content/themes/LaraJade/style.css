@@ -19,6 +19,16 @@
     float: right;
 }
 
+
+.container .blog_title{
+	color:black;
+}
+.container a.blog_title:hover {
+	color: black;
+}
+
+    /*This was already here in WP theme*/
+
         html
 		{
 		}
@@ -280,7 +290,7 @@ figcaption.single > p{
 					.container,
 					.container a
 					{
-						color: #cfd7db;
+						color:#cfd7db;
 					}
 					.container a:hover
 					{

@@ -23,10 +23,15 @@
                         echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )['0'];
                         echo '" alt="">';
                         
+                        $ID_blog_post = get_the_ID();
                         
-                        echo '<strong>';
-                        the_title();
-                        echo '</strong>';
+                        echo '<strong>';?>
+                        <?php
+                                echo '<a href="?page_id=77&ID=' . $ID_blog_post .  '" class="blog_title">';
+                                the_title();
+                                echo '</a>';
+                                ?>
+                        <?php echo '</strong>';
                         the_content('',false);
                         echo '</figcaption>
 						    </figure>

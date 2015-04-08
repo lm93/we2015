@@ -57,8 +57,8 @@
                         while ( $myPosts->have_posts() ):      
                             $myPosts->the_post();
                             the_content('',false);
-                            echo '<a href="';
-                            the_permalink();
+                            echo '<a href="?page_id=77&ID=';
+                            echo get_the_ID();
                             echo'">More...</a>';
                         endwhile;
                         ?>
