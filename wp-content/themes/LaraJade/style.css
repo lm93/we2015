@@ -1,6 +1,25 @@
 @import url( '_normalize.css' );
 @import url( '_defaults.css' );
-		html
+
+    /*Newly added*/
+
+#nav-posts {
+    width: 100%;
+}
+
+#nav-posts-newer {
+    width: 50%;
+    text-align: center;
+    float:left;
+}
+
+#nav-posts-older {
+    width: 50%;
+    text-align: center;
+    float: right;
+}
+
+        html
 		{
 		}
 			body

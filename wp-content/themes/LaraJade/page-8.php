@@ -15,7 +15,7 @@
 					<br><br><br><br><br><br><br><br><br><br><br>
 
 					<div style="float:left;overflow: hidden;vertical-align: bottom;">
-						<form>
+						<form action="\we2015\wp-content\themes\LaraJade\mailToAdmin.php" method="post">
 							<p style="float:left;">
 								First name:
 							</p>
@@ -31,7 +31,8 @@
 							<br>
 							<textarea type="text" name="message" rows="7" cols="65" >	</textarea>
 							<br>
-							<button type="button" style="background-color:#fafafa; color:#000;padding-left:5px;padding-right:5px;">
+							<input type="hidden" name="admin_mail" value="<?php echo get_option('admin_email');?>">
+                            <button type="submit" style="background-color:#fafafa; color:#000;padding-left:5px;padding-right:5px;">
 								Submit
 							</button>
 						</form>

@@ -1,11 +1,61 @@
 <?php 
     global $stylesheet_dir, $stylesheet_url;
     get_header();
-?>
+?>              
 				<div class="container" style="background-image: url('<?php echoPicture($stylesheet_dir,'./images/bg2.png');?> ');background-size: 100%;background-repeat: no-repeat;background-color: #040205; " role="main">
-					<ul class="list">
-					 
-                       <li class="blog_list__item">
+				
+                <ul class="list">
+                    	
+                
+
+                <?php
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    query_posts('cat=Blog&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged);
+                    
+                    while ( have_posts() ):      
+                        the_post(); 
+                        echo '<li class="blog_list__item">
+						    <figure class="blog_list__item__inner">
+						    <figcaption>';
+                        
+                        
+                        echo '<img src="';
+                        echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )['0'];
+                        echo '" alt="">';
+                        
+                        
+                        echo '<strong>';
+                        the_title();
+                        echo '</strong>';
+                        the_content('',false);
+                        echo '</figcaption>
+						    </figure>
+						    </li>';
+                    endwhile;
+                    ?>
+                </ul>
+                
+                    
+                <br><br>
+                
+                
+                <div id="nav-posts">
+			        <div id="nav-posts-newer"><?php previous_posts_link('Newer Posts'); ?></div>
+                    <div id="nav-posts-older"><?php next_posts_link('Older Posts'); ?></div>
+		        </div>
+		            
+
+		          
+
+		            <?php wp_reset_postdata(); ?>
+                    
+                    
+
+                    
+				
+                      <!-- 
+                      
+                        <li class="blog_list__item">
 							<figure class="blog_list__item__inner">
 								<figcaption>
 									<img src="<?php echoPicture($stylesheet_dir,'./images/blog/b1.jpg');?>" alt="">
@@ -15,7 +65,7 @@
 
 								</figcaption>
 							</figure>
-						</li>
+						</li> 
 						<li class="blog_list__item">
 							<figure class="blog_list__item__inner">
 								<figcaption>
@@ -47,10 +97,12 @@
 									As web developers we play with images all the time and in most cases browsers are great at scaling images to fit the boundaries of our site designs whilst keeping the images pretty. But what happens when you want to control how the browser scales the images on your page?
 								</figcaption>
 							</figure>
-						</li>
-					</ul>
+						</li>-->
+					
                     
-
+                  
+                    
+                    
 				</div>
 <?php 
     get_footer();

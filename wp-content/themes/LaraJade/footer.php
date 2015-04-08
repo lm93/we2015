@@ -24,7 +24,19 @@
 					<strong>About Me</strong>
 					<br>
 					<br>
-					Lara is a freelance web designer with satisfied clients worldwide. Lara has been designing websites professionally for over eight years, and... <strong>More</strong>
+
+                    <?php
+                        $myPosts = new WP_Query('page_id=2');
+                        while ( $myPosts->have_posts() ):      
+                            $myPosts->the_post();
+                            $more=0;
+                            the_content('',false);
+                            echo '<a href="/we2015/index.php">More...</a>';
+                        endwhile;
+                        wp_reset_postdata();
+                        ?>
+
+					<!--Lara is a freelance web designer with satisfied clients worldwide. Lara has been designing websites professionally for over eight years, and... <strong>More</strong>-->
 					<br>
 					<br>
 					<strong>Follow me:</strong>
@@ -40,7 +52,19 @@
 					<strong>My last post</strong>
 					<br>
 					<br>
-					Over the previous year, the Polymer team has spent a lot of time teaching developers how to create their own elements. This has lead to a rapidly growing ecosystem, buoyed in large... <strong>More</strong>
+					<?php
+                        $myPosts = new WP_Query('posts_per_page=1&orderby=date&order=DESC');
+                        while ( $myPosts->have_posts() ):      
+                            $myPosts->the_post();
+                            the_content('',false);
+                            echo '<a href="';
+                            the_permalink();
+                            echo'">More...</a>';
+                        endwhile;
+                        ?>
+                        
+
+                    <!--Over the previous year, the Polymer team has spent a lot of time teaching developers how to create their own elements. This has lead to a rapidly growing ecosystem, buoyed in large... <strong>More</strong>-->
 				</div>
 				<div class="flex-item">
 					<strong>Last Project</strong>
