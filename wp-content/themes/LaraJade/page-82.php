@@ -1,4 +1,4 @@
-<!-- single BLOG POST page-->
+<!-- single PORTFOLIO ENTRY page-->
 
 <?php 
     global $stylesheet_dir, $stylesheet_url;
@@ -14,15 +14,15 @@
             <figure class="blog_list__item__inner">
                 <figcaption>
                     <?php
-                            $a = array('p'=>$ID_blog_post);
-                            query_posts($a);
+                            $a = array('p'=>$ID_blog_post); //TODO portfolio entries
+                            query_posts($a);                //todo
                             the_post();
                             $more=1;
-                            echo '<img src="';
+                            echo '<img src="';              //todo
                             echo wp_get_attachment_image_src( get_post_thumbnail_id( $ID_blog_post ), 'single-post-thumbnail' )['0'];
                             echo '" alt="">';
                             echo '<strong>';
-                            echo get_the_title($ID_blog_post);
+                            echo get_the_title($ID_blog_post); //todo
                             echo '</strong>';
                             echo '<br><br>';
                             the_content();

@@ -1,3 +1,4 @@
+<!-- BLOG -->
 <?php 
     global $stylesheet_dir, $stylesheet_url;
     get_header();
