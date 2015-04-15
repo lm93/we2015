@@ -50,10 +50,9 @@
 				</div>
 				<div class="flex-item" style="margin-right: 1.25rem;">
 					<strong>My last post</strong>
-					<br>
-					<br>
+					<br/>
 					<?php
-                        $myPosts = new WP_Query('posts_per_page=1&orderby=date&order=DESC');
+                        $myPosts = new WP_Query('posts_per_page=1&orderby=date&order=DESC&cat=1');
                         while ( $myPosts->have_posts() ):      
                             $myPosts->the_post();
                             the_content('',false);
@@ -61,20 +60,26 @@
                             echo get_the_ID();
                             echo'">More...</a>';
                         endwhile;
-                        ?>
+                    ?>
                         
 
                     <!--Over the previous year, the Polymer team has spent a lot of time teaching developers how to create their own elements. This has lead to a rapidly growing ecosystem, buoyed in large... <strong>More</strong>-->
 				</div>
 				<div class="flex-item">
 					<strong>Last Project</strong>
-					<br>
-					</br>
-					Freelance WebSite
-					<br>
-					<br>
-					<img width="80%" src="<?php echoPicture($stylesheet_dir,'images/portfolio/p1.jpg');?>" >
+					<br/>
+					<?php
+                        $myPosts = new WP_Query('posts_per_page=1&orderby=date&order=DESC&cat=2');
+                        while ( $myPosts->have_posts() ):      
+                            $myPosts->the_post();
+                            the_content('',false);
+                            echo '<a href="?page_id=82&ID=';
+                            echo get_the_ID();
+                            echo'">More...</a>';
+                        endwhile;
+                    ?>
 				</div>
+                
 
 				<!-- </div> -->
 			</div>

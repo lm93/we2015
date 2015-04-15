@@ -11,7 +11,7 @@
 
                 <?php
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    query_posts('cat=Blog&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged);
+                    query_posts('cat=1&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged);
                     
                     while ( have_posts() ):      
                         the_post(); 
@@ -29,7 +29,7 @@
                         echo '<strong>';?>
                         <?php
                                 echo '<a href="?page_id=77&ID=' . $ID_blog_post .  '" class="blog_title">';
-                                the_title();
+                                the_title(); // could be replaced with the_permalink();
                                 echo '</a>';
                                 ?>
                         <?php echo '</strong>';
