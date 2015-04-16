@@ -28,6 +28,16 @@
                             the_content();
 
                     ?>
+                    
+                    
+                    <textarea style="display:none;color:black;background:white;"></textarea>
+                    <br/><br/>
+                    <button id='edit' onclick="
+                            $('button').show(); $('#edit').hide();$('textarea').show(); ">edit</button>
+                    <button id='submit' style="display:none;" onclick="
+                            $('textarea').show();">submit</button>
+                    <br>
+                    <input type='file'/>
                 </figcaption>
             </figure>
         </li>

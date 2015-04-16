@@ -11,3 +11,15 @@
  }
 
 ?>
+
+<!-- posts 2 posts -->
+<?php
+function my_connection_types() {
+    p2p_register_connection_type( array(
+        'name' => 'blog_to_portfolio',
+        'from' => 'post',
+        'to' => 'post'
+    ) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+?>
