@@ -25,15 +25,17 @@
                             echo get_the_title($ID_blog_post);
                             echo '</strong>';
                             echo '<br><br>';
+                            echo '<div id="content" contenteditable="false">';
                             the_content();
+                            echo '</div>'
 
                     ?>
                     
                     
-                    <textarea style="display:none;color:black;background:white;"></textarea>
+                    <textarea style="display:none;color:black;background:white;opacity:1;"></textarea>
                     <br/><br/>
-                    <button id='edit' onclick="
-                            $('button').show(); $('#edit').hide();$('textarea').show(); ">edit</button>
+                    <button id='edit' 
+                            onclick="$('button').show(); $('#edit').hide();/*$('textarea').show();*/$('#content').prop('contenteditable',!$('#content').is('.editable')).toggleClass('editable');">edit</button>
                     <button id='submit' style="display:none;" onclick="
                             $('textarea').show();">submit</button>
                     <br>

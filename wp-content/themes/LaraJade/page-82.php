@@ -27,8 +27,8 @@
                         echo '<br><br>';
                         the_content();
                         echo '<br><br>';
-                        echo '<h5>Description: </h5>'
-                        echo echo get_post_meta($_GET["ID"], 'description', true);
+                        echo '<h5>Description: </h5>';
+                        echo get_post_meta($_GET["ID"], 'description', true);
 
                         echo '<br><br>';
                         echo '<a href="';
