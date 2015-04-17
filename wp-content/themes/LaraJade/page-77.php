@@ -36,8 +36,7 @@
                     <br/><br/>
                     <button id='edit' 
                             onclick="$('button').show(); $('#edit').hide();/*$('textarea').show();*/$('#content').prop('contenteditable',!$('#content').is('.editable')).toggleClass('editable');">edit</button>
-                    <button id='submit' style="display:none;" onclick="
-                            $('textarea').show();">submit</button>
+                    <button id='submit' style="display:none;" onclick="">submit</button>
                     <br>
                     <input type='file'/>
                 </figcaption>

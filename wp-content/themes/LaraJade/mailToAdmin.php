@@ -3,6 +3,7 @@
     $subject = 'Mail from ' . $_POST["firstname"] . ' ' . $_POST["lastname"]; 
     $message_body = $_POST["message"];
     $admin_email_address = $_POST["admin_mail"]; //'luka.manola@hotmail.com';
+    
     mail($admin_email_address, $subject, $message_body);
 ?>
 
